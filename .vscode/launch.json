@@ -1,0 +1,59 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Explode map",
+            "program": "patchwork-mapconverter",
+            "request": "launch",
+            "runtimeExecutable": "npx",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node",
+            "args": [
+                "-d",
+                "-ct",
+                "-td",
+                "./.vscode/triggerdata.txt",
+                "-si",
+                "war2json",
+                "./build.w3x",
+                "./map"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npx",
+            "name": "Build Map",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "patchwork-mapconverter",
+            "args": [
+                "-d",
+                "-ct",
+                "-td",
+                "./.vscode/triggerdata.txt",
+                "-si",
+                "json2war",
+                "./map",
+                "./build.w3x"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npm",
+            "name": "Install Patchwork",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "install",
+            "args": [
+                "-g",
+                "patchwork-mapconverter"
+            ]
+        }
+    ]
+}
