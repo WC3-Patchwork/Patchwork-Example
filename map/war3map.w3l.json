@@ -1,0 +1,7 @@
+{
+  "unitLightFilename": "",
+  "terrainLightFilename": "",
+  "useCustomUnitLight": false,
+  "useCustomTerrainLight": false,
+  "useCustomBothLights": false
+}

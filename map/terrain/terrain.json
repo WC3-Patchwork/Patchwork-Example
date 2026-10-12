@@ -1,0 +1,27 @@
+{
+  "tileset": "LORDAERON_SUMMER",
+  "customTileset": false,
+  "tilePalette": [
+    "Ldrt",
+    "Ldro",
+    "Ldrg",
+    "Lrok",
+    "Lgrs",
+    "Lgrd"
+  ],
+  "cliffTilePalette": [
+    "CLdi",
+    "CLgr"
+  ],
+  "map": {
+    "sizeX": 64,
+    "sizeY": 64,
+    "offsetX": -4096,
+    "offsetY": -4096
+  },
+  "cameras": [],
+  "regions": [],
+  "doodads": [],
+  "specialDoodads": [],
+  "units": []
+}

@@ -3,56 +3,53 @@
     "configurations": [
         {
             "name": "Explode map",
-            "program": "patchwork-mapconverter",
+            "type": "node",
             "request": "launch",
             "runtimeExecutable": "npx",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "type": "node",
+            "program": "patchwork-mapconverter",
             "args": [
-                "-d",
-                "-ct",
-                "-td",
-                "./.vscode/triggerdata.txt",
-                "-si",
+                "-p",
+                "--ct",
+                "--td",
+                "./triggerdata.txt",
+                "--si",
+                "--chunkify",
+                "--chunk-size",
+                "5,5,0,0",
                 "war2json",
                 "./build.w3x",
-                "./map"
+                "./map",
+                "--gtp"
             ]
         },
         {
+            "name": "Build Map",
             "type": "node",
             "request": "launch",
             "runtimeExecutable": "npx",
-            "name": "Build Map",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
             "program": "patchwork-mapconverter",
             "args": [
-                "-d",
-                "-ct",
-                "-td",
-                "./.vscode/triggerdata.txt",
-                "-si",
+                "--ct",
+                "--td",
+                "./triggerdata.txt",
+                "--si",
+                "--chunkify",
                 "json2war",
                 "./map",
-                "./build.w3x"
+                "./build.w3x",
+                "latest"
             ]
         },
         {
+            "name": "Install Patchwork",
             "type": "node",
             "request": "launch",
             "runtimeExecutable": "npm",
-            "name": "Install Patchwork",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
             "program": "install",
             "args": [
                 "-g",
-                "patchwork-mapconverter"
+                "patchwork-mapconverter",
+                "--allow-scripts=koffi"
             ]
         }
     ]
